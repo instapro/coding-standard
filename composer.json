@@ -1,0 +1,25 @@
+{
+    "name": "instapro/code-standards",
+    "license": "proprietary",
+    "type": "project",
+    "description": "The Instapro code standards",
+    "autoload": {
+        "psr-4": { "Instapro\\CodeStandards\\": "src" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Instapro\\CodeStandards\\Test\\": "tests"}
+    },
+    "require": {
+        "php": "^8.0 || ^8.1 || ^8.2",
+        "friendsofphp/php-cs-fixer": "^3.14"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://gitlab.werkspot.com/api/v4/group/49/-/packages/composer/packages.json"
+        }
+    ]
+}
