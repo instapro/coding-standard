@@ -22,3 +22,13 @@ test:
     - composer install --no-progress --no-ansi --no-suggest
     - vendor/bin/phpunit tests
     - vendor/bin/php-cs-fixer fix --verbose --dry-run
+
+tag:
+  image: curlimages/curl:latest
+  only:
+    refs:
+      - tags
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - 'curl --header "Job-Token: $CI_JOB_TOKEN" --data tag=$CI_COMMIT_TAG "$CI_API_V4_URL/projects/$CI_PROJECT_ID/packages/composer"'
