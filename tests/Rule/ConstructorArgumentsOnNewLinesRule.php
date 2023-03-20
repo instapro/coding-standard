@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Instapro\CodeStandards\Test\Rule;
 
 use Instapro\CodeStandards\Rule\ConstructorArgumentsOnNewLinesRule;
-use Instapro\CodeStandards\Test\AbstractFixerTest;
+use Instapro\CodeStandards\Test\AbstractFixer;
 use PhpCsFixer\Fixer\FixerInterface;
 
 /**
@@ -13,11 +13,11 @@ use PhpCsFixer\Fixer\FixerInterface;
  *
  * @small
  */
-final class ConstructorArgumentsOnNewLinesRuleTest extends AbstractFixerTest
+final class ConstructorArgumentsOnNewLinesRule extends AbstractFixer
 {
     protected function createFixer(): FixerInterface
     {
-        return new ConstructorArgumentsOnNewLinesRule();
+        return new self();
     }
 
     /**

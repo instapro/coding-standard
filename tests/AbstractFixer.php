@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 use SplFileInfo;
 use function count;
 
-abstract class AbstractFixerTest extends TestCase
+abstract class AbstractFixer extends TestCase
 {
     private FixerInterface $fixer;
 
