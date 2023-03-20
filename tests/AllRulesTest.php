@@ -52,6 +52,7 @@ final class AllRulesTest extends TestCase
         $commandTester = new CommandTester($command);
         $commandTester->execute([
             'path' => [self::FILE],
+            '--config' => __DIR__ . '/../.php-cs-fixer.dist.php',
             '--diff' => 'true',
             '--dry-run' => true,
             '--using-cache' => 'no',
