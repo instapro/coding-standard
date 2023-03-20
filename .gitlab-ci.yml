@@ -9,17 +9,19 @@ test:
     - merge_requests
   parallel:
     matrix:
-      - IMAGE:
-          - php:8.0-cli
-          - php:8.1-cli
-          - php:cli
+      - IMAGE: php:8.0-cli
+        COMPOSER_OPTIONS: ["--prefer-lowest", ""]
+      - IMAGE: php:8.1-cli
+        COMPOSER_OPTIONS: [""]
+      - IMAGE: php:cli
+        COMPOSER_OPTIONS: [""]
   before_script:
     - apt-get -qq update
     - apt-get -y --no-install-recommends install git unzip
     - curl -s -L -o /dev/stdout https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer | php -- --quiet --filename=composer --install-dir=/bin
   script:
     # Install dependencies and run tests
-    - composer install --no-progress --no-ansi --no-suggest
+    - composer update --no-progress --no-ansi --no-suggest $COMPOSER_OPTIONS
     - vendor/bin/phpunit tests
     - vendor/bin/php-cs-fixer fix --verbose --dry-run
 
