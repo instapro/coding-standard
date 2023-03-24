@@ -8,6 +8,11 @@ use Instapro\CodeStandards\Rule\ConstructorArgumentsOnNewLinesRule;
 
 $constructorArgumentsOnNewLinesRule = new ConstructorArgumentsOnNewLinesRule();
 
+echo \PHP_EOL . "\033[31m!!!\033[0m Loading the configuration via " . __FILE__ . " is deprecated \033[31m!!!\033[0m" . \PHP_EOL;
+echo 'Use `\Instapro\CodeStandards\Load::configuration()` instead.' . \PHP_EOL . \PHP_EOL;
+
+@trigger_error('Loading the configuration  via ' . __FILE__ . ' is deprecated, use `\Instapro\CodeStandards\Load::configuration()` instead.', \E_USER_DEPRECATED);
+
 return (new PhpCsFixer\Config('Instapro'))
     ->registerCustomFixers([$constructorArgumentsOnNewLinesRule])
     ->setRiskyAllowed(true)

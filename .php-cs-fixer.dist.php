@@ -2,15 +2,14 @@
 
 declare(strict_types=1);
 
-$codeStandards = include __DIR__ . '/src/codeStandards.php';
+use Instapro\CodeStandards\Load;
 
-return $codeStandards
-    ->setFinder(
-        PhpCsFixer\Finder::create()
-            ->exclude('Files')
-            ->in([
-                __DIR__ . '/src',
-                __DIR__ . '/tests',
-            ])
-            ->name('*.php'),
-    );
+return Load::configuration(
+    PhpCsFixer\Finder::create()
+        ->exclude('Files')
+        ->in([
+            __DIR__ . '/src',
+            __DIR__ . '/tests',
+        ])
+        ->name('*.php'),
+);
