@@ -11,7 +11,7 @@ help:
 	@echo "Available commands:"
 	@grep -v '^_' Makefile | grep '^[^#[:space:]].*:' | grep -v '^default' | sed 's/:\(.*\)//' | xargs -n 1 echo ' -'
 
-code-standards:
+coding-standard:
 	vendor/bin/php-cs-fixer fix --verbose
 
 test:

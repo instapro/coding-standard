@@ -1,13 +1,13 @@
 {
-    "name": "instapro/code-standards",
+    "name": "instapro/coding-standard",
     "license": "proprietary",
     "type": "project",
-    "description": "The Instapro code standards",
+    "description": "The Instapro Coding Standard",
     "autoload": {
-        "psr-4": { "Instapro\\CodeStandards\\": "src" }
+        "psr-4": { "Instapro\\CodingStandard\\": "src" }
     },
     "autoload-dev": {
-        "psr-4": { "Instapro\\CodeStandards\\Test\\": "tests"}
+        "psr-4": { "Instapro\\CodingStandard\\Test\\": "tests"}
     },
     "require": {
         "php": "^8.0",

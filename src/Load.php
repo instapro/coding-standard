@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Instapro\CodeStandards;
+namespace Instapro\CodingStandard;
 
-use Instapro\CodeStandards\Rule\ConstructorArgumentsOnNewLinesRule;
+use Instapro\CodingStandard\Rule\ConstructorArgumentsOnNewLinesRule;
 use PhpCsFixer\Config;
 use PhpCsFixer\ConfigInterface;
 

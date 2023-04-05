@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Instapro\CodeStandards\Test;
+namespace Instapro\CodingStandard\Test;
 
 use Exception;
 use InvalidArgumentException;
