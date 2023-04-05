@@ -1,9 +1,5 @@
-.DS_Store
-.idea
-.project
-/.vscode/
-.bash_history
 /.php-cs-fixer.cache
+/.phpunit.result.cache
+/composer.lock
+/phpunit.xml
 /vendor/
-composer.lock
-.phpunit.result.cache
