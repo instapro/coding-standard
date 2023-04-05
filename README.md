@@ -1,6 +1,6 @@
-# Instapro code standards
+# Instapro Coding Standard
 
-This project holds the PHP CS Fixer code standards we want to use company-wide.
+The Instapro Coding Standard is a set of [PHP CS Fixer][] that we use in the Instapro projects.
 
 ## How to use
 
@@ -15,17 +15,17 @@ This project holds the PHP CS Fixer code standards we want to use company-wide.
    ```
 2. Install the package as a dev requirement
    ```shell
-   composer require --dev instapro/code-standards
+   composer require --dev instapro/coding-standard
    ```
 3. Add/update your `.php-cs-fixer.dist.php` configuration file to load the configuration from the package. Be sure to
-   update the finder configuration to match the files you want to enforce the code standards for. 
+   update the finder configuration to match the files you want to enforce the coding standard for. 
 
    ```php
    <?php
    
    declare(strict_types=1);
    
-   use Instapro\CodeStandards\Load;
+   use Instapro\CodingStandard\Load;
    
    return Load::configuration(
        PhpCsFixer\Finder::create()
@@ -55,3 +55,5 @@ to add the following things to the pipeline configuration
    ```
    RUN --mount=type=secret,required=true,id=COMPOSER_AUTH,dst=/root/.composer/auth.json composer install --no-cache --optimize-autoloader
    ```
+
+[PHP CS Fixer]: https://github.com/PHP-CS-Fixer/PHP-CS-Fixer

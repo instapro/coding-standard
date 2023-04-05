@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Instapro\CodeStandards\Load;
+use Instapro\CodingStandard\Load;
 
 return Load::configuration(
     PhpCsFixer\Finder::create()

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Instapro\CodeStandards\Test\Rule;
+namespace Instapro\CodingStandard\Test\Rule;
 
-use Instapro\CodeStandards\Rule\ConstructorArgumentsOnNewLinesRule;
-use Instapro\CodeStandards\Test\AbstractFixer;
+use Instapro\CodingStandard\Rule\ConstructorArgumentsOnNewLinesRule;
+use Instapro\CodingStandard\Test\AbstractFixer;
 use PhpCsFixer\Fixer\FixerInterface;
 
 /**

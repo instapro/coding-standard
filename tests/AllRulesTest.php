@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Instapro\CodeStandards\Test;
+namespace Instapro\CodingStandard\Test;
 
 use PhpCsFixer\Console\Application;
 use PhpCsFixer\Console\Command\FixCommandExitStatusCalculator;

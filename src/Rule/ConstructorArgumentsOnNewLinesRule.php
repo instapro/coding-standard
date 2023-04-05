@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Instapro\CodeStandards\Rule;
+namespace Instapro\CodingStandard\Rule;
 
 use PhpCsFixer\Fixer\FixerInterface;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
