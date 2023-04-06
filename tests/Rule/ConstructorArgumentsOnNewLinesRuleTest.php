@@ -13,11 +13,11 @@ use PhpCsFixer\Fixer\FixerInterface;
  *
  * @small
  */
-final class ConstructorArgumentsOnNewLinesRule extends AbstractFixer
+final class ConstructorArgumentsOnNewLinesRuleTest extends AbstractFixer
 {
     protected function createFixer(): FixerInterface
     {
-        return new self();
+        return new ConstructorArgumentsOnNewLinesRule();
     }
 
     /**
