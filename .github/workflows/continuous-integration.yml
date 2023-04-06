@@ -6,17 +6,26 @@ on:
 
 jobs:
   tests:
-    name: Tests
 
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        php-version:
-          - "8.0"
-          - "8.1"
-          - "8.2"
+        include:
+          - php-version: 8.0
+            composer-options: --prefer-lowest
+            name: PHP 8.0 with lowest requirements
+          - php-version: 8.0
+            composer-options: --prefer-dist
+            name: PHP 8.0
+          - php-version: 8.1
+            composer-options: --prefer-dist
+            name: PHP 8.1
+          - php-version: 8.2
+            composer-options: --prefer-dist
+            name: PHP 8.2
 
+    name: Tests ${{ matrix.name }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -28,7 +37,7 @@ jobs:
           coverage: none
 
       - name: Install Dependencies
-        run: composer install --prefer-dist
+        run: composer update ${{ matrix.composer-options }}
 
       - name: Run PHPUnit
         run: vendor/bin/phpunit
