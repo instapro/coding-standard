@@ -1,6 +1,6 @@
 # Instapro Coding Standard
 
-The Instapro Coding Standard is a set of [PHP CS Fixer][] that we use in the Instapro projects.
+The Instapro Coding Standard is a set of [PHP CS Fixer][] rules that we use in the Instapro projects.
 
 ## How to use
 
