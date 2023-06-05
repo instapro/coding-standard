@@ -39,6 +39,7 @@ final class Load
                 'multiline_whitespace_before_semicolons' => ['strategy' => 'no_multi_line'],
                 'no_superfluous_phpdoc_tags' => true,
                 'no_trailing_whitespace_in_string' => false,
+                'nullable_type_declaration_for_default_null_value' => false,
                 'phpdoc_separation' => false,
                 'no_useless_else' => true,
                 'no_useless_return' => true,

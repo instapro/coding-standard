@@ -1,6 +1,6 @@
 --- __FILE__
 +++ __FILE__
-@@ -1,17 +1,41 @@
+@@ -1,18 +1,45 @@
 -<?php declare(strict_types=1);
 +<?php
 +
@@ -47,6 +47,10 @@
 +
 +        return 'hi!';
 +    }
++
++    public function whoop(?string $string = null, int|null $int = null): void
++    {
++    }
  }
 -private function ifsAreWrappedAndUselessElseIsRemoved():bool{if (true) return true; else return false;
 -//There's currently a bug that causes the second return statement to be incorrectly aligned for some reason.
@@ -56,5 +60,6 @@
 -    if ($this->string == '') return 'Heyo!';
 -return 'hi!';
 -}
+-public function whoop(?string $string = null, int|null $int = null): void {}
 -}
 \ No newline at end of file

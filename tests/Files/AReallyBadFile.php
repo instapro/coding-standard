@@ -14,4 +14,5 @@ private function bla(){
     if ($this->string == '') return 'Heyo!';
 return 'hi!';
 }
+public function whoop(?string $string = null, int|null $int = null): void {}
 }
