@@ -36,14 +36,14 @@ final class AllRulesTest extends TestCase
         self::assertCount(1, $json['files']);
 
         $diff = $json['files'][0]['diff'];
-        $diff = $this->removeFilePath(self::FILE, $diff);
+        $diff = $this->removeFilePath($diff);
 
         self::assertSame(file_get_contents(__DIR__ . '/Files/expected.diff'), $diff);
     }
 
-    private function removeFilePath(string $filePath, string $diff): string
+    private function removeFilePath(string $diff): string
     {
-        return str_replace($filePath, '__FILE__', $diff);
+        return str_replace(self::FILE, '__FILE__', $diff);
     }
 
     private function executeFixCommand(): string
