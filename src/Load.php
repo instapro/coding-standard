@@ -82,6 +82,20 @@ final class Load
                         'method' => 'one',
                     ],
                 ],
+                'ordered_class_elements' => [
+                    'order' => [
+                        'use_trait',
+                        'constant_public',
+                        'constant_protected',
+                        'constant_private',
+                        'property_public_static',
+                        'property_protected_static',
+                        'property_private_static',
+                        'method_public',
+                        'method_protected',
+                        'method_private',
+                    ],
+                ],
                 'trailing_comma_in_multiline' => ['elements' => ['arrays', 'arguments', 'parameters']],
             ])
             ->setFinder($finder);
