@@ -35,6 +35,7 @@ final class AllRulesTest extends TestCase
         self::assertArrayHasKey('files', $json);
         self::assertCount(1, $json['files']);
 
+        self::assertArrayHasKey('diff', $json['files'][0]);
         $diff = $json['files'][0]['diff'];
         $diff = $this->removeFilePath($diff);
 
@@ -53,7 +54,7 @@ final class AllRulesTest extends TestCase
         $commandTester->execute([
             'path' => [self::FILE],
             '--config' => __DIR__ . '/../.php-cs-fixer.dist.php',
-            '--diff' => 'true',
+            '--diff' => true,
             '--dry-run' => true,
             '--using-cache' => 'no',
             '--format' => 'json',
