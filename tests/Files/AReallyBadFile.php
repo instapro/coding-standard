@@ -4,7 +4,7 @@ class AReallyBadFile {
 protected string $string='';
 public function __construct(Foo $a, Bar $bar){}
 public function getMethod():string{
-return $this->string;
+return $this->string;   
 }
 private function ifsAreWrappedAndUselessElseIsRemoved():bool{if (true) return true; else return false;
 //There's currently a bug that causes the second return statement to be incorrectly aligned for some reason.
@@ -15,4 +15,10 @@ private function bla(){
 return 'hi!';
 }
 public function whoop(?string $string = null, int|null $int = null): void {}
+
+public function query(): void {
+    <<<QUERY
+                SELECT COUNT(*) 
+    QUERY;
+}
 }
