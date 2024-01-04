@@ -14,6 +14,11 @@ private function bla(){
     if ($this->string == '') return 'Heyo!';
 return 'hi!';
 }
+private function test(): void{
+    $lambda = function () {
+        echo 'test';
+    };
+}
 public function whoop(?string $string = null, int|null $int = null): void {}
 
 public function query(): void {

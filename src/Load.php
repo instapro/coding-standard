@@ -82,6 +82,7 @@ final class Load
                         'method' => 'one',
                     ],
                 ],
+                'static_lambda' => true,
                 'trailing_comma_in_multiline' => ['elements' => ['arrays', 'arguments', 'parameters']],
             ])
             ->setFinder($finder);
