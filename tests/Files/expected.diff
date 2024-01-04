@@ -1,6 +1,6 @@
 --- __FILE__
 +++ __FILE__
-@@ -1,24 +1,52 @@
+@@ -1,29 +1,59 @@
 -<?php declare(strict_types=1);
 +<?php
 +
@@ -20,6 +20,11 @@
 -private function bla(){
 -    if ($this->string == '') return 'Heyo!';
 -return 'hi!';
+-}
+-private function test(): void{
+-    $lambda = function () {
+-        echo 'test';
+-    };
 -}
 -public function whoop(?string $string = null, int|null $int = null): void {}
  
@@ -60,6 +65,13 @@
 +        }
 +
 +        return 'hi!';
++    }
++
++    private function test(): void
++    {
++        $lambda = static function (): void {
++            echo 'test';
++        };
 +    }
 +
 +    public function whoop(?string $string = null, int|null $int = null): void
