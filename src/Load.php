@@ -14,7 +14,7 @@ final class Load
     {
         $constructorArgumentsOnNewLinesRule = new ConstructorArgumentsOnNewLinesRule();
 
-        return (new Config('Instapro'))
+        $config = (new Config('Instapro'))
             ->registerCustomFixers([$constructorArgumentsOnNewLinesRule])
             ->setRiskyAllowed(true)
             ->setRules([
@@ -86,5 +86,11 @@ final class Load
                 'trailing_comma_in_multiline' => ['elements' => ['arrays', 'arguments', 'parameters']],
             ])
             ->setFinder($finder);
+
+        if (method_exists($config, 'setUnsupportedPhpVersionAllowed')) {
+            $config = $config->setUnsupportedPhpVersionAllowed(true);
+        }
+
+        return $config;
     }
 }

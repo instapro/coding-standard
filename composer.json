@@ -10,7 +10,7 @@
         "psr-4": { "Instapro\\CodingStandard\\Test\\": "tests"}
     },
     "require": {
-        "php": "^8.0",
+        "php": "^8.3",
         "friendsofphp/php-cs-fixer": "^3.70"
     },
     "require-dev": {
