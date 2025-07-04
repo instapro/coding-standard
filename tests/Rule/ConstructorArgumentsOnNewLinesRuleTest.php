@@ -7,12 +7,14 @@ namespace Instapro\CodingStandard\Test\Rule;
 use Instapro\CodingStandard\Rule\ConstructorArgumentsOnNewLinesRule;
 use Instapro\CodingStandard\Test\AbstractFixer;
 use PhpCsFixer\Fixer\FixerInterface;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Small;
+use PHPUnit\Framework\Attributes\Test;
 
 /**
  * @internal
- *
- * @small
  */
+#[Small]
 final class ConstructorArgumentsOnNewLinesRuleTest extends AbstractFixer
 {
     protected function createFixer(): FixerInterface
@@ -20,10 +22,8 @@ final class ConstructorArgumentsOnNewLinesRuleTest extends AbstractFixer
         return new ConstructorArgumentsOnNewLinesRule();
     }
 
-    /**
-     * @test
-     * @dataProvider provideFixCases
-     */
+    #[Test]
+    #[DataProvider('provideFixCases')]
     public function it_formats_code_properly(string $expected, ?string $input = null): void
     {
         $this->doTest($expected, $input);
