@@ -21,6 +21,8 @@ private function test(): void{
 }
 public function whoop(?string $string = null, int|null $int = null): void {}
 
+public function missingNullable(string $string = null, int $int = null): void {}
+
 public function query(): void {
     <<<QUERY
                 SELECT COUNT(*) 

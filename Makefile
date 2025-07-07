@@ -15,4 +15,4 @@ coding-standard:
 	vendor/bin/php-cs-fixer fix --verbose
 
 test:
-	vendor/bin/phpunit --verbose
+	vendor/bin/phpunit

@@ -6,15 +6,16 @@ namespace Instapro\CodingStandard\Test;
 
 use PhpCsFixer\Console\Application;
 use PhpCsFixer\Console\Command\FixCommandExitStatusCalculator;
+use PHPUnit\Framework\Attributes\Large;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 use const JSON_THROW_ON_ERROR;
 
 /**
  * @internal
- *
- * @large
  */
+#[Large]
 final class AllRulesTest extends TestCase
 {
     public const FILE = __DIR__ . '/Files/AReallyBadFile.php';
@@ -26,7 +27,7 @@ final class AllRulesTest extends TestCase
         $this->application = new Application();
     }
 
-    /** @test */
+    #[Test]
     public function it_formats_code_properly(): void
     {
         $output = $this->executeFixCommand();

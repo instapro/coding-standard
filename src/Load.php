@@ -14,7 +14,7 @@ final class Load
     {
         $constructorArgumentsOnNewLinesRule = new ConstructorArgumentsOnNewLinesRule();
 
-        return (new Config('Instapro'))
+        $config = (new Config('Instapro'))
             ->registerCustomFixers([$constructorArgumentsOnNewLinesRule])
             ->setRiskyAllowed(true)
             ->setRules([
@@ -39,7 +39,7 @@ final class Load
                 'multiline_whitespace_before_semicolons' => ['strategy' => 'no_multi_line'],
                 'no_superfluous_phpdoc_tags' => true,
                 'no_trailing_whitespace_in_string' => true,
-                'nullable_type_declaration_for_default_null_value' => false,
+                'nullable_type_declaration_for_default_null_value' => true,
                 'phpdoc_separation' => false,
                 'no_useless_else' => true,
                 'no_useless_return' => true,
@@ -86,5 +86,11 @@ final class Load
                 'trailing_comma_in_multiline' => ['elements' => ['arrays', 'arguments', 'parameters']],
             ])
             ->setFinder($finder);
+
+        if (method_exists($config, 'setUnsupportedPhpVersionAllowed')) {
+            $config = $config->setUnsupportedPhpVersionAllowed(true);
+        }
+
+        return $config;
     }
 }

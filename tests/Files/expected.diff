@@ -1,6 +1,6 @@
 --- __FILE__
 +++ __FILE__
-@@ -1,29 +1,59 @@
+@@ -1,31 +1,63 @@
 -<?php declare(strict_types=1);
 +<?php
 +
@@ -28,14 +28,15 @@
 -}
 -public function whoop(?string $string = null, int|null $int = null): void {}
  
+-public function missingNullable(string $string = null, int $int = null): void {}
++class AReallyBadFile
++{
++    protected string $string = '';
+ 
 -public function query(): void {
 -    <<<QUERY
 -                SELECT COUNT(*) 
 -    QUERY;
-+class AReallyBadFile
-+{
-+    protected string $string = '';
-+
 +    public function __construct(
 +        Foo $a,
 +        Bar $bar,
@@ -74,7 +75,11 @@
 +        };
 +    }
 +
-+    public function whoop(?string $string = null, int|null $int = null): void
++    public function whoop(?string $string = null, ?int $int = null): void
++    {
++    }
++
++    public function missingNullable(?string $string = null, ?int $int = null): void
 +    {
 +    }
 +
