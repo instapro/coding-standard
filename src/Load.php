@@ -85,11 +85,8 @@ final class Load
                 'static_lambda' => true,
                 'trailing_comma_in_multiline' => ['elements' => ['arrays', 'arguments', 'parameters']],
             ])
-            ->setFinder($finder);
-
-        if (method_exists($config, 'setUnsupportedPhpVersionAllowed')) {
-            $config = $config->setUnsupportedPhpVersionAllowed(true);
-        }
+            ->setFinder($finder)
+            ->setUnsupportedPhpVersionAllowed(true);
 
         return $config;
     }
