@@ -7,6 +7,7 @@ namespace Instapro\CodingStandard;
 use Instapro\CodingStandard\Rule\ConstructorArgumentsOnNewLinesRule;
 use PhpCsFixer\Config;
 use PhpCsFixer\ConfigInterface;
+use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 
 final class Load
 {
@@ -86,6 +87,7 @@ final class Load
                 'trailing_comma_in_multiline' => ['elements' => ['arrays', 'arguments', 'parameters']],
             ])
             ->setFinder($finder)
+            ->setParallelConfig(ParallelConfigFactory::detect())
             ->setUnsupportedPhpVersionAllowed(true);
 
         return $config;
