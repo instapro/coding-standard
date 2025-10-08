@@ -1,6 +1,6 @@
 --- __FILE__
 +++ __FILE__
-@@ -1,31 +1,63 @@
+@@ -1,31 +1,65 @@
 -<?php declare(strict_types=1);
 +<?php
 +
@@ -9,7 +9,7 @@
  namespace Instapro;
 -class AReallyBadFile {
 -protected string $string='';
--public function __construct(Foo $a, Bar $bar){}
+-public function __construct(Foo $a, \Baz\Bar $bar){}
 -public function getMethod():string{
 -return $this->string;   
 -}
@@ -29,14 +29,16 @@
 -public function whoop(?string $string = null, int|null $int = null): void {}
  
 -public function missingNullable(string $string = null, int $int = null): void {}
-+class AReallyBadFile
-+{
-+    protected string $string = '';
++use Baz\Bar;
  
 -public function query(): void {
 -    <<<QUERY
 -                SELECT COUNT(*) 
 -    QUERY;
++class AReallyBadFile
++{
++    protected string $string = '';
++
 +    public function __construct(
 +        Foo $a,
 +        Bar $bar,

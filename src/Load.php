@@ -53,6 +53,9 @@ final class Load
                     'sort_algorithm' => 'alpha',
                     'imports_order' => ['class', 'function', 'const'],
                 ],
+                'fully_qualified_strict_types' => [
+                    'import_symbols' => true,
+                ],
                 'phpdoc_order' => true,
                 'array_syntax' => ['syntax' => 'short'],
                 'echo_tag_syntax' => [
