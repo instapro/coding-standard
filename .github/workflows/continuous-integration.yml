@@ -21,6 +21,9 @@ jobs:
           - php-version: 8.4
             composer-options: --prefer-dist
             name: PHP 8.4
+          - php-version: 8.5
+            composer-options: --prefer-dist
+            name: PHP 8.5
 
     name: Tests ${{ matrix.name }}
     steps:
