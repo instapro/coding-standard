@@ -31,10 +31,13 @@ final class Load
                 'no_unneeded_control_parentheses' => true,
                 'phpdoc_align' => false,
                 'phpdoc_summary' => false,
+                // PHP CS Fixer 3.94+ defaults class/case docblocks to multi-line; null leaves them unchanged.
                 'phpdoc_line_span' => [
-                    'property' => 'single',
-                    'method' => 'single',
+                    'case' => null,
+                    'class' => null,
                     'const' => 'single',
+                    'method' => 'single',
+                    'property' => 'single',
                 ],
                 'concat_space' => ['spacing' => 'one'],
                 'multiline_whitespace_before_semicolons' => ['strategy' => 'no_multi_line'],
